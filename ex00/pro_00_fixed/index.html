@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vulnerable XSS no leak Example</title>
+</head>
+<body>
+    <h1>XSS no leak Vulnerability Example</h1>
+    <p>This is a fixed vulnerable page with an XSS vulnerability.</p>
+    <form>
+        <label for="inputText">Enter some text:</label>
+        <input type="text" id="inputText">
+        <button type="button" onclick="displayText()">Submit</button>
+    </form>
+    <div id="output"></div>
+    <script>
+        document.cookie = "ftCookies=If_You_See_Me_Its_Win";
+        function displayText() {
+            var userInput = document.getElementById("inputText").value;
+            var sanitizedInput = sanitize(userInput);
+            document.getElementById("output").textContent = sanitizedInput;
+
+            function sanitize(str){
+                var temp = document.createElement('div');
+                temp.textContent = str;
+                return temp.innerHTML;
+            }
+        }
+    </script>
+
+    <div id="cookieOutput"></div>
+</body>
+</html>

