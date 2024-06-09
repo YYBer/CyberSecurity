@@ -22,3 +22,10 @@ This part of the code takes the user input and appends it as a script.An attacke
 ```
 document.getElementById("output").innerHTML= document.cookie;
 ```
+
+
+to run autotest, you need install:
+```
+pip3 install selenium
+pip3 install selenium.webdriver
+```

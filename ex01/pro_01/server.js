@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 
 // By default, the port 8080 will be used if the APP_PORT environment variable is not set
-const PORT = process.env.APP_PORT || 8080;
+const PORT = process.env.APP_PORT || 8070;
 
 // Insecure way to store balance (just for demonstration purposes)
 let balance = 1000;
