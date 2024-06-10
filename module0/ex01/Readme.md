@@ -3,7 +3,7 @@ What Is Cross-Site Request Forgery (CSRF) and How Does It ...
 Cross-Site Request Forgery (CSRF) is an attack that forces authenticated users to submit a request to a Web application against which they are currently authenticated. CSRF attacks exploit the trust a Web application has in an authenticated user.
 
 Is CSRF same as XSS?
-CSRF and XSS are different in several ways. First, CSRF relies on the user's browser to send a request to the target site, while XSS relies on the user's browser to execute code from the attacker's site. Second, CSRF does not require the attacker to compromise the target site, while XSS does.
+CSRF and XSS ar/transfertarget site, while XSS relies on the user's browser to execute code from the attacker's site. Second, CSRF does not require the attacker to compromise the target site, while XSS does.
 
 leak in teh index.html:
 No CSRF Token: The form does not include a CSRF token to prevent CSRF attacks. CSRF tokens are typically generated server-side and included in forms as hidden input fields. When the form is submitted, the server verifies the CSRF token to ensure that the request originated from the same site.

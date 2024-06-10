@@ -37,7 +37,7 @@ urls=$(docker-compose logs 2>/dev/null | grep -oP 'http://[^\s]*')
 
 # Display URLs
 echo "You can connect on this website:"
-echo "http://localhost:5000/"
+echo "http://localhost:5010/"
 for url in $urls; do
     echo "$url"
 done

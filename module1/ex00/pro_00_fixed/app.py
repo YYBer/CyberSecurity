@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template_string
+from flask import Flask, request, render_template_string, escape
 
 app = Flask(__name__)
 
@@ -7,10 +7,10 @@ def index():
     return '''
     <html>
     <head>
-        <title>Template Injection App</title>
+        <title>Template Injection Fixed App</title>
     </head>
     <body>
-        <h1>Template Injection App</h1>
+        <h1>Template Injection Fixed App</h1>
         <form method="POST" action="/render">
             <label for="input">Enter your input:</label>
             <input type="text" id="input" name="input">
@@ -24,12 +24,9 @@ def index():
 @app.route('/render', methods=['POST'])
 def render():
     user_input = request.form.get('input')
-    template = f'Hello, {{ {user_input} }}!'
-    try:
-        result = render_template_string(template)
-    except Exception as e:
-        result = str(e)
-    return render_template_string(index(), result=result)
+    safe_user_input = escape(user_input)
+    template = f'Hello, {{ {safe_user_input} }}!'
+    return render_template_string(index(), result=template)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5010)
