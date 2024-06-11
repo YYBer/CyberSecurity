@@ -9,3 +9,7 @@ module1:
     ex01: XML external entity injection
 
 
+useful url:  
+https://github.com/swisskyrepo/PayloadsAllTheThings  
+
+https://xz.aliyun.com/tab/1
