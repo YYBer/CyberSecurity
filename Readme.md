@@ -5,7 +5,7 @@ module0:
 
 
 module1:  
-    ex00: Flask Basics and Template Injection Vulnerability (SSTI)
+    ex00: Flask Basics and Template Injection Vulnerability (SSTI)  
     ex01: XML external entity injection
 
 
