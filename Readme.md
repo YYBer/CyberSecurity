@@ -6,10 +6,10 @@ module0:
 
 module1:  
     ex00: Flask Basics and Template Injection Vulnerability (SSTI)  
-    ex01: XML external entity injection
+    ex01: XML external entity injection  
+    ex02: SSRF+LFI injection  
 
 
 useful url:  
 https://github.com/swisskyrepo/PayloadsAllTheThings  
-
 https://xz.aliyun.com/tab/1
